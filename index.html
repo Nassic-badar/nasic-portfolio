@@ -1,217 +1,980 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Nasic Badar | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
+    <title>Muhammad Nasic Badar — Data Analyst &amp; Data Scientist</title>
+    <meta
+      name="description"
+      content="Python-first data analyst and data scientist in Karak, Pakistan. I turn messy data into decisions you can defend — analysis, dashboards, and applied NLP. Open to internships and junior roles."
     />
+    <meta name="author" content="Muhammad Nasic Badar" />
+    <meta name="theme-color" content="#f2efe7" />
+    <link rel="canonical" href="https://nassic-badar.github.io/nasic-portfolio/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nassic-badar.github.io/nasic-portfolio/" />
+    <meta property="og:title" content="Data, made legible. — Muhammad Nasic Badar" />
+    <meta
+      property="og:description"
+      content="Python-first data analyst building careful analysis, useful dashboards, and applied NLP. BS Data Science, IMS Peshawar. Open to internships and junior roles."
+    />
+    <meta property="og:image" content="https://nassic-badar.github.io/nasic-portfolio/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data, made legible. — Muhammad Nasic Badar" />
+    <meta
+      name="twitter:description"
+      content="Python-first data analyst. Careful analysis, useful dashboards, applied NLP. Open to internships and junior roles."
+    />
+    <meta name="twitter:image" content="https://nassic-badar.github.io/nasic-portfolio/assets/og.png" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('nb-theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.classList.add('js');
+        } catch (e) {
+          document.documentElement.classList.add('js');
+        }
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Nasic Badar",
+        "jobTitle": "Data Analyst",
+        "description": "Python-first data analyst and data scientist focused on careful analysis, dashboards, and applied NLP.",
+        "email": "mailto:badarnasic@gmail.com",
+        "telephone": "+92 337 2318387",
+        "url": "https://nassic-badar.github.io/nasic-portfolio/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Karak",
+          "addressRegion": "Khyber Pakhtunkhwa",
+          "addressCountry": "PK"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Institute of Management Sciences, Peshawar"
+        },
+        "knowsAbout": [
+          "Data Analysis",
+          "Python",
+          "SQL",
+          "Pandas",
+          "Machine Learning",
+          "Retrieval-Augmented Generation",
+          "Streamlit"
+        ],
+        "sameAs": ["https://github.com/Nassic-badar"]
+      }
+    </script>
   </head>
+
   <body>
-    <div class="bg-orbit"></div>
-    <div class="bg-orbit bg-orbit-2"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header" id="top">
-      <div class="container nav-wrap">
-        <a class="logo" href="#top">Nasic<span>Badar</span></a>
-        <nav class="nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#certs">Certifications</a>
-          <a href="#projects">Projects</a>
-          <a href="Muhammad_Nasic_Badar_Resume.pdf" target="_blank">Resume</a>
-          <a href="#contact">Contact</a>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Nasic Badar — back to top">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="1.4" />
+            <polyline
+              points="7,21.5 12,15 17,18.5 25,9.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="25" cy="9.5" r="2.3" fill="var(--accent)" />
+          </svg>
+          <span class="brand-text">
+            <span class="brand-name">Nasic Badar</span>
+            <span class="brand-role">Data Analyst</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#work" data-nav><span class="nav-num">01</span>Work</a>
+          <a href="#method" data-nav><span class="nav-num">02</span>Method</a>
+          <a href="#stack" data-nav><span class="nav-num">03</span>Stack</a>
+          <a href="#profile" data-nav><span class="nav-num">04</span>Profile</a>
+          <a href="#contact" data-nav><span class="nav-num">05</span>Contact</a>
         </nav>
-        <a class="cta" href="#contact">Hire Me</a>
+
+        <div class="header-tools">
+          <span class="clock" title="Local time — Karak, Pakistan (PKT)">
+            <span class="clock-dot" aria-hidden="true"></span>
+            <span class="clock-label">Karak</span>
+            <time data-clock datetime="">--:--</time>
+          </span>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <path
+                d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <a class="btn btn-ink btn-sm header-cv" href="Muhammad_Nasic_Badar_Resume.pdf" download>
+            CV <span aria-hidden="true">↓</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="menu-label">Menu</span>
+            <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero" id="home">
-        <div class="container hero-grid">
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="mobile-menu-inner">
+        <nav aria-label="Mobile navigation">
+          <a href="#work"><span>01</span>Work</a>
+          <a href="#method"><span>02</span>Method</a>
+          <a href="#stack"><span>03</span>Stack</a>
+          <a href="#profile"><span>04</span>Profile</a>
+          <a href="#contact"><span>05</span>Contact</a>
+        </nav>
+        <div class="mobile-menu-foot">
+          <a href="mailto:badarnasic@gmail.com">badarnasic@gmail.com</a>
+          <a href="https://github.com/Nassic-badar" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="Muhammad_Nasic_Badar_Resume.pdf" download>Download CV ↓</a>
+          <p>Karak, Pakistan · <span data-clock>--:--</span> PKT</p>
+        </div>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- ───────────────────────────── HERO ───────────────────────────── -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="shell hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Web Developer | Data Scientist (Entry-Level)</p>
-            <h1>
-              Building responsive web apps and
-              <span class="gradient-text">practical AI</span> workflows.
-            </h1>
-            <p class="lead">
-              Entry-level Web Developer and aspiring Data Scientist focused on
-              clean interfaces and real-world ML/NLP solutions. Currently
-              building a personal portfolio platform and a Medical RAG AI
-              assistant.
+            <p class="hero-kicker">
+              <span class="status"><span class="status-dot" aria-hidden="true"></span>Open to internships &amp; junior roles</span>
+              <span class="kicker-sep" aria-hidden="true">/</span>
+              <span>Data Analyst · Data Scientist</span>
             </p>
+
+            <h1 id="hero-title">
+              <span class="line"><span>I turn</span></span>
+              <span class="line"><span><em>messy data</em> into</span></span>
+              <span class="line"><span>decisions you</span></span>
+              <span class="line"><span>can defend.</span></span>
+            </h1>
+
+            <p class="lead">
+              Python-first analysis, careful SQL, and tools people actually use — from the first audit
+              of a CSV to the dashboard that ships. I like work that is reproducible, explainable, and
+              honest about its limits.
+            </p>
+
             <div class="hero-actions">
-              <a
-                class="btn primary"
-                href="Muhammad_Nasic_Badar_Resume.pdf"
-                target="_blank"
-                >View Resume</a
-              >
-              <a
-                class="btn ghost"
-                href="Muhammad_Nasic_Badar_Resume.pdf"
-                download
-                >Download PDF</a
-              >
+              <a class="btn btn-ink" href="#work">See the work <span class="btn-arrow" aria-hidden="true">↓</span></a>
+              <a class="btn btn-ghost" href="Muhammad_Nasic_Badar_Resume.pdf" download>
+                Download CV <span class="btn-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href="https://github.com/Nassic-badar" target="_blank" rel="noopener">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
             </div>
-            <div class="mini-stats">
+
+            <dl class="hero-meta">
               <div>
-                <h3>2</h3>
-                <span>In-progress projects</span>
+                <dt>Based in</dt>
+                <dd>Karak, Pakistan</dd>
               </div>
               <div>
-                <h3>4</h3>
-                <span>Learning tracks</span>
+                <dt>Education</dt>
+                <dd>BS Data Science · 2026</dd>
               </div>
               <div>
-                <h3>2026</h3>
-                <span>Expected graduation</span>
+                <dt>Languages</dt>
+                <dd>English · Urdu · Pashto</dd>
               </div>
-            </div>
+            </dl>
           </div>
-          <div class="hero-card">
-            <div class="card-top">
-              <span>Profile</span>
-              <span class="pulse"></span>
+
+          <figure class="field-figure" data-reveal>
+            <div class="field-head">
+              <span class="field-label">Fig. 01 — Signal field</span>
+              <span class="field-live"><span class="live-dot" aria-hidden="true"></span>Live</span>
             </div>
-            <h2>Muhammad Nasic Badar</h2>
-            <p>Web Developer · Data Scientist (Entry-Level)</p>
-            <div class="tags">
-              <span>React</span>
-              <span>Tailwind</span>
-              <span>JavaScript</span>
-              <span>Python</span>
-            </div>
-            <div class="card-footer">
-              <div>
-                <h4>Location</h4>
-                <p>Karak, Pakistan</p>
-              </div>
-              <div>
-                <h4>Status</h4>
-                <p>Open to jobs</p>
+            <div class="field-stage" id="field-stage">
+              <canvas
+                id="field-canvas"
+                role="img"
+                aria-label="A live contour field: a slowly shifting scalar surface, with a probe showing the value under the cursor."
+              ></canvas>
+              <span class="axis axis-x" aria-hidden="true">x&nbsp;0.0 — 1.0</span>
+              <span class="axis axis-y" aria-hidden="true">y&nbsp;1.0 ↑</span>
+              <div class="field-readout" id="field-readout" aria-hidden="true">
+                <span>x <b data-probe="x">0.50</b></span>
+                <span>y <b data-probe="y">0.50</b></span>
+                <span>f <b data-probe="f">0.000</b></span>
               </div>
             </div>
+            <figcaption>Move to probe. A scalar field, redrawn live in the browser.</figcaption>
+          </figure>
+        </div>
+
+        <div class="shell">
+          <div class="scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <i></i>
           </div>
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="container two-col">
-          <div>
-            <h2>About Me</h2>
-            <p>
-              Entry-level Web Developer and aspiring Data Scientist building
-              responsive web applications and practical ML/NLP solutions. I am
-              comfortable with React, Tailwind CSS, JavaScript, and Node.js for
-              web development, and Python (Pandas, NumPy, SQL) with
-              scikit-learn/PyTorch for data workflows.
-            </p>
-            <p>
-              I am currently developing a personal portfolio platform and a
-              Medical RAG (Retrieval-Augmented Generation) AI assistant. Open to
-              internships and junior roles.
-            </p>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span class="ticker-tag">Toolkit</span>
+            <span>Python</span><span class="ticker-star">/</span>
+            <span>Pandas</span><span class="ticker-star">/</span>
+            <span>NumPy</span><span class="ticker-star">/</span>
+            <span>SQL</span><span class="ticker-star">/</span>
+            <span>Matplotlib</span><span class="ticker-star">/</span>
+            <span>Seaborn</span><span class="ticker-star">/</span>
+            <span>Streamlit</span><span class="ticker-star">/</span>
+            <span>scikit-learn</span><span class="ticker-star">/</span>
+            <span>PyTorch</span><span class="ticker-star">/</span>
+            <span>React</span><span class="ticker-star">/</span>
+            <span>Node.js</span><span class="ticker-star">/</span>
+            <span>Chroma</span><span class="ticker-star">/</span>
+            <span>Git</span><span class="ticker-star">/</span>
           </div>
-          <div class="glass-panel">
-            <h3>Core Skills</h3>
-            <ul>
-              <li>React, HTML5, CSS3, JavaScript, TypeScript</li>
-              <li>Node.js, REST API basics, Tailwind CSS</li>
-              <li>Python, Pandas, NumPy, SQL</li>
-              <li>scikit-learn, PyTorch, NLP fundamentals</li>
+          <div class="ticker-group" aria-hidden="true">
+            <span class="ticker-tag">Toolkit</span>
+            <span>Python</span><span class="ticker-star">/</span>
+            <span>Pandas</span><span class="ticker-star">/</span>
+            <span>NumPy</span><span class="ticker-star">/</span>
+            <span>SQL</span><span class="ticker-star">/</span>
+            <span>Matplotlib</span><span class="ticker-star">/</span>
+            <span>Seaborn</span><span class="ticker-star">/</span>
+            <span>Streamlit</span><span class="ticker-star">/</span>
+            <span>scikit-learn</span><span class="ticker-star">/</span>
+            <span>PyTorch</span><span class="ticker-star">/</span>
+            <span>React</span><span class="ticker-star">/</span>
+            <span>Node.js</span><span class="ticker-star">/</span>
+            <span>Chroma</span><span class="ticker-star">/</span>
+            <span>Git</span><span class="ticker-star">/</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ───────────────────────────── WORK ───────────────────────────── -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="section-index"><span>01</span>Selected work</p>
+            <div class="section-title">
+              <h2 id="work-title">Two builds, one obsession: <em>legibility.</em></h2>
+              <p class="section-sub">
+                Long-running, open on GitHub, still evolving. Both are in development — which is the
+                honest part.
+              </p>
+            </div>
+          </div>
+
+          <article class="project" data-reveal>
+            <div class="project-copy">
+              <div class="project-kicker">
+                <span class="project-id">P.01</span>
+                <span class="status"><i aria-hidden="true"></i>In development</span>
+                <span class="project-type">Applied NLP / RAG</span>
+              </div>
+              <h3>Medica — a medical PDF assistant that shows its work.</h3>
+              <p class="project-summary">
+                Upload a medical PDF, ask a question, and get an answer grounded in the pages it came
+                from. The interesting part isn't the chatbot — it's the retrieval pipeline underneath:
+                clean text, honest chunks, and citations you can check.
+              </p>
+
+              <ul class="chips" aria-label="Technologies used">
+                <li>Python</li>
+                <li>Streamlit</li>
+                <li>Chroma</li>
+                <li>Embeddings</li>
+                <li>PyTorch</li>
+                <li>Git</li>
+              </ul>
+
+              <div class="project-links">
+                <a class="text-link" href="https://github.com/Nassic-badar/Medica" target="_blank" rel="noopener">
+                  View repository <span aria-hidden="true">↗</span>
+                </a>
+                <span class="project-note">Early prototype · source is a work in progress</span>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="pipeline" data-pipeline>
+                <div class="pipeline-head">
+                  <span>Retrieval path</span>
+                  <span>5 stages</span>
+                </div>
+                <div class="pipeline-track" role="tablist" aria-label="Medica retrieval pipeline stages">
+                  <button class="stage is-active" type="button" role="tab" id="stage-tab-1" aria-selected="true" aria-controls="stage-panel-1" tabindex="0">
+                    <span class="stage-num">01</span>
+                    <span class="stage-name">Ingest</span>
+                  </button>
+                  <button class="stage" type="button" role="tab" id="stage-tab-2" aria-selected="false" aria-controls="stage-panel-2" tabindex="-1">
+                    <span class="stage-num">02</span>
+                    <span class="stage-name">Chunk</span>
+                  </button>
+                  <button class="stage" type="button" role="tab" id="stage-tab-3" aria-selected="false" aria-controls="stage-panel-3" tabindex="-1">
+                    <span class="stage-num">03</span>
+                    <span class="stage-name">Embed</span>
+                  </button>
+                  <button class="stage" type="button" role="tab" id="stage-tab-4" aria-selected="false" aria-controls="stage-panel-4" tabindex="-1">
+                    <span class="stage-num">04</span>
+                    <span class="stage-name">Retrieve</span>
+                  </button>
+                  <button class="stage" type="button" role="tab" id="stage-tab-5" aria-selected="false" aria-controls="stage-panel-5" tabindex="-1">
+                    <span class="stage-num">05</span>
+                    <span class="stage-name">Answer</span>
+                  </button>
+                </div>
+                <div class="stage-details">
+                  <div class="stage-detail" id="stage-panel-1" role="tabpanel" aria-labelledby="stage-tab-1">
+                    <h4>PDF → text, page by page.</h4>
+                    <p>
+                      Extract text while keeping page boundaries and metadata intact. If the source is
+                      messy, the answer will be too — so this step gets more attention than it looks
+                      like it deserves.
+                    </p>
+                    <span class="stage-tech">PDF parsing · page metadata</span>
+                  </div>
+                  <div class="stage-detail" id="stage-panel-2" role="tabpanel" aria-labelledby="stage-tab-2" hidden>
+                    <h4>Clean, split, overlap.</h4>
+                    <p>
+                      Break the document into passages that still mean something on their own: remove
+                      artifacts, keep enough surrounding context, and overlap the seams so answers
+                      don't fall between chunks.
+                    </p>
+                    <span class="stage-tech">text cleaning · overlap windows</span>
+                  </div>
+                  <div class="stage-detail" id="stage-panel-3" role="tabpanel" aria-labelledby="stage-tab-3" hidden>
+                    <h4>Meaning, as geometry.</h4>
+                    <p>
+                      Turn each passage into a vector so meaning can be compared by distance instead of
+                      keywords. The embedding choice is a real design decision, not a default.
+                    </p>
+                    <span class="stage-tech">sentence embeddings · vectors</span>
+                  </div>
+                  <div class="stage-detail" id="stage-panel-4" role="tabpanel" aria-labelledby="stage-tab-4" hidden>
+                    <h4>Find the nearest evidence.</h4>
+                    <p>
+                      Search the vector store for the closest passages and keep their page references
+                      attached. Retrieval quality is the difference between an answer and a guess.
+                    </p>
+                    <span class="stage-tech">Chroma · similarity search · top-k</span>
+                  </div>
+                  <div class="stage-detail" id="stage-panel-5" role="tabpanel" aria-labelledby="stage-tab-5" hidden>
+                    <h4>Grounded, with receipts.</h4>
+                    <p>
+                      Generate from the retrieved context only, and return the source pages with every
+                      answer. A response you can't trace back isn't finished.
+                    </p>
+                    <span class="stage-tech">grounded generation · citations</span>
+                  </div>
+                </div>
+              </div>
+              <p class="visual-caption">Click a stage to inspect it — the pipeline is the product.</p>
+            </div>
+          </article>
+
+          <article class="project project-alt" data-reveal>
+            <div class="project-copy">
+              <div class="project-kicker">
+                <span class="project-id">P.02</span>
+                <span class="status"><i aria-hidden="true"></i>In development</span>
+                <span class="project-type">Full-stack platform</span>
+              </div>
+              <h3>A portfolio that behaves like a data product.</h3>
+              <p class="project-summary">
+                Not a static page — a small publishing system. Authentication, an admin panel,
+                database-backed projects and posts, and a REST API underneath. This site is the front
+                door; the platform is the house.
+              </p>
+
+              <ul class="feature-list">
+                <li><span aria-hidden="true">+</span>Auth-gated admin for every piece of content</li>
+                <li><span aria-hidden="true">+</span>Projects, posts, and profile sections in one schema</li>
+                <li><span aria-hidden="true">+</span>REST endpoints instead of hard-coded pages</li>
+                <li><span aria-hidden="true">+</span>A blog module that reads as well as it renders</li>
+              </ul>
+
+              <ul class="chips" aria-label="Technologies used">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Node.js</li>
+                <li>MongoDB</li>
+                <li>MySQL</li>
+                <li>Tailwind</li>
+              </ul>
+
+              <div class="project-links">
+                <a class="text-link" href="https://github.com/Nassic-badar/Portfolio" target="_blank" rel="noopener">
+                  Portfolio repository <span aria-hidden="true">↗</span>
+                </a>
+                <span class="project-note">Code and progress on GitHub</span>
+              </div>
+            </div>
+
+            <div class="project-visual">
+              <div class="layers">
+                <div class="layers-head">
+                  <span>System layers</span>
+                  <span>4 tiers</span>
+                </div>
+                <div class="layer">
+                  <span class="layer-key">UI</span>
+                  <div class="layer-body">
+                    <h4>React client</h4>
+                    <p>A responsive public site and an admin surface for the same content.</p>
+                  </div>
+                  <span class="layer-meta">:3000</span>
+                </div>
+                <div class="layer">
+                  <span class="layer-key">API</span>
+                  <div class="layer-body">
+                    <h4>Node.js + Express</h4>
+                    <p>REST endpoints for projects, posts, and profile sections; auth guarding writes.</p>
+                  </div>
+                  <span class="layer-meta">/api/v1</span>
+                </div>
+                <div class="layer">
+                  <span class="layer-key">DATA</span>
+                  <div class="layer-body">
+                    <h4>MongoDB / MySQL</h4>
+                    <p>Content stored as documents and rows — editable without a deploy.</p>
+                  </div>
+                  <span class="layer-meta">persist</span>
+                </div>
+                <div class="layer">
+                  <span class="layer-key">OPS</span>
+                  <div class="layer-body">
+                    <h4>Git · Tailwind · Streamlit</h4>
+                    <p>Versioned, styled, and shipped in small, reviewable pieces.</p>
+                  </div>
+                  <span class="layer-meta">review</span>
+                </div>
+              </div>
+              <p class="visual-caption">A small system, drawn as a small system.</p>
+            </div>
+          </article>
+
+          <div class="experiments" data-reveal>
+            <div class="experiments-head">
+              <h3>Also in the repo</h3>
+              <span>Practice &amp; coursework</span>
+            </div>
+            <ul class="exp-list">
+              <li>
+                <a href="https://github.com/Nassic-badar/CoLAB-Files" target="_blank" rel="noopener">
+                  <span class="exp-year">2024</span>
+                  <span class="exp-name">CoLAB notebooks</span>
+                  <span class="exp-desc">EDA, cleaning, and visualization practice in Google Colab.</span>
+                  <span class="exp-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Nassic-badar/Biobert-Pytorch" target="_blank" rel="noopener">
+                  <span class="exp-year">2025</span>
+                  <span class="exp-name">BioBERT exploration</span>
+                  <span class="exp-desc">Reading and running biomedical NLP in PyTorch.</span>
+                  <span class="exp-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Nassic-badar/Smart-Brain" target="_blank" rel="noopener">
+                  <span class="exp-year">2022–23</span>
+                  <span class="exp-name">React builds</span>
+                  <span class="exp-desc">Smart-Brain, Robo-Friends, and storefront UIs — the frontend foundation.</span>
+                  <span class="exp-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="section" id="certs">
-        <div class="container">
-          <div class="section-head">
-            <h2>Certifications</h2>
-            <p>Training and certifications that shaped my foundation.</p>
+      <!-- ───────────────────────────── METHOD ───────────────────────────── -->
+      <section class="section" id="method" aria-labelledby="method-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="section-index"><span>02</span>Method</p>
+            <div class="section-title">
+              <h2 id="method-title">Four steps, no shortcuts.</h2>
+              <p class="section-sub">
+                A method is just a promise you keep when the data gets ugly.
+              </p>
+            </div>
           </div>
-          <div class="card-grid">
-            <article class="info-card">
-              <h3>Web Development Certification</h3>
-              <p>Udemy</p>
-              <span>2021</span>
+
+          <div class="method-grid" data-reveal>
+            <article class="step">
+              <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.4" />
+                <circle cx="24" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="1.4" />
+                <path d="M24 3v9M24 36v9M3 24h9M36 24h9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                <circle cx="24" cy="24" r="2.4" fill="var(--accent)" />
+              </svg>
+              <span class="step-num">01</span>
+              <h3>Frame the question</h3>
+              <p>
+                Before touching a dataset, I write down the decision it is supposed to support. If I
+                can't name the decision, the chart is decoration.
+              </p>
             </article>
-            <article class="info-card">
-              <h3>Complete Python Developer</h3>
-              <p>Udemy</p>
-              <span>2025</span>
+
+            <article class="step">
+              <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="5" y="7" width="38" height="34" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" />
+                <path d="M5 16h38M5 25h38M5 34h38M17 7v34M30 7v34" stroke="currentColor" stroke-width="1" opacity=".55" />
+                <rect x="17.5" y="16.5" width="12" height="8" fill="var(--accent)" opacity=".18" />
+                <rect x="17.5" y="16.5" width="12" height="8" fill="none" stroke="var(--accent)" stroke-width="1.4" />
+                <path d="M20 20.5l2 2 4-4" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="step-num">02</span>
+              <h3>Audit before analysis</h3>
+              <p>
+                Missing values, duplicates, impossible dates, silent type coercion. I profile the data
+                first — most “insights” die in this step.
+              </p>
             </article>
-            <article class="info-card">
-              <h3>AI / Machine Learning Bootcamp</h3>
-              <p>Udemy</p>
-              <span>2026</span>
+
+            <article class="step">
+              <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M6 6v36h36" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                <path d="M9 34l9-8 7 5 14-15" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <g fill="currentColor">
+                  <circle cx="12" cy="30" r="1.6" />
+                  <circle cx="18" cy="22" r="1.6" />
+                  <circle cx="25" cy="26" r="1.6" />
+                  <circle cx="31" cy="17" r="1.6" />
+                  <circle cx="38" cy="11" r="1.6" />
+                </g>
+              </svg>
+              <span class="step-num">03</span>
+              <h3>Explore, then model</h3>
+              <p>
+                Plots before p-values. A baseline before a neural net. If a simple model is enough, it
+                ships.
+              </p>
             </article>
+
+            <article class="step">
+              <svg class="step-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="5" y="7" width="38" height="34" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" />
+                <path d="M5 15h38" stroke="currentColor" stroke-width="1" opacity=".55" />
+                <circle cx="10" cy="11" r="1.4" fill="currentColor" />
+                <circle cx="15" cy="11" r="1.4" fill="currentColor" />
+                <rect x="11" y="24" width="5" height="10" fill="var(--accent)" opacity=".8" />
+                <rect x="20" y="20" width="5" height="14" fill="var(--accent)" opacity=".55" />
+                <rect x="29" y="27" width="5" height="7" fill="var(--accent)" opacity=".35" />
+                <path d="M11 32l9-6 8 2 9-8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="step-num">04</span>
+              <h3>Ship it legibly</h3>
+              <p>
+                A notebook is not a deliverable. I turn work into Streamlit tools, clean tables, and a
+                short written explanation.
+              </p>
+            </article>
+          </div>
+
+          <blockquote class="quote" data-reveal>
+            <p>The best model is the one a non-technical stakeholder can question.</p>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ───────────────────────────── STACK ───────────────────────────── -->
+      <section class="section" id="stack" aria-labelledby="stack-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="section-index"><span>03</span>Stack</p>
+            <div class="section-title">
+              <h2 id="stack-title">Tools, with an honest depth gauge.</h2>
+              <p class="section-sub">
+                Not a wall of logos. What I use daily, what I can ship with, and what I'm still
+                learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="stack-toolbar" data-reveal>
+            <div class="filters" role="group" aria-label="Filter skills by discipline">
+              <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">
+                All <span>20</span>
+              </button>
+              <button class="filter" type="button" data-filter="data" aria-pressed="false">
+                Analysis <span>8</span>
+              </button>
+              <button class="filter" type="button" data-filter="ml" aria-pressed="false">
+                ML &amp; AI <span>4</span>
+              </button>
+              <button class="filter" type="button" data-filter="web" aria-pressed="false">
+                Web <span>5</span>
+              </button>
+              <button class="filter" type="button" data-filter="tools" aria-pressed="false">
+                Data &amp; tools <span>3</span>
+              </button>
+            </div>
+            <p class="legend">
+              <span class="legend-item"><span class="depth-mini" aria-hidden="true"><i></i><i></i><i></i></span>Core</span>
+              <span class="legend-item"><span class="depth-mini" aria-hidden="true"><i></i><i></i><i></i></span>Working</span>
+              <span class="legend-item"><span class="depth-mini" aria-hidden="true"><i></i><i></i><i></i></span>Foundations</span>
+            </p>
+          </div>
+
+          <div class="stack-groups">
+            <section class="stack-group" data-group="data" data-reveal>
+              <h3 class="group-head"><span>Analysis</span><span class="group-count">08</span></h3>
+              <ul class="skill-list">
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-note">daily driver for cleaning, EDA, and tooling</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Pandas</span>
+                  <span class="skill-note">wrangling, joins, reshaping, summary tables</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">NumPy</span>
+                  <span class="skill-note">vectorised math and array thinking</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-note">joins, aggregations, subqueries, CTEs</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Jupyter</span>
+                  <span class="skill-note">reproducible notebooks, Colab workflows</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Matplotlib / Seaborn</span>
+                  <span class="skill-note">charts that make an argument, not just a picture</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Streamlit</span>
+                  <span class="skill-note">interactive dashboards — filters, KPIs, tables</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Excel</span>
+                  <span class="skill-note">pivot tables, charts, and reporting</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="stack-group" data-group="ml" data-reveal>
+              <h3 class="group-head"><span>ML &amp; AI</span><span class="group-count">04</span></h3>
+              <ul class="skill-list">
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">scikit-learn</span>
+                  <span class="skill-note">regression, classification, preprocessing, evaluation</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">NLP / RAG</span>
+                  <span class="skill-note">chunking, embeddings, retrieval — project-based</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="1">
+                  <span class="skill-name">PyTorch</span>
+                  <span class="skill-note">tensors, training loops, model basics</span>
+                  <span class="depth" role="img" aria-label="Foundational knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="1">
+                  <span class="skill-name">Chroma</span>
+                  <span class="skill-note">vector storage and similarity search</span>
+                  <span class="depth" role="img" aria-label="Foundational knowledge"><i></i><i></i><i></i></span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="stack-group" data-group="web" data-reveal>
+              <h3 class="group-head"><span>Web</span><span class="group-count">05</span></h3>
+              <ul class="skill-list">
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">HTML / CSS</span>
+                  <span class="skill-note">semantic, responsive, accessible by default</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">React</span>
+                  <span class="skill-note">component-driven UIs and state</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">Node.js</span>
+                  <span class="skill-note">REST APIs, routing, authentication basics</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">Tailwind CSS</span>
+                  <span class="skill-note">utility-first layout and design systems</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="1">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-note">typed gradually — more every project</span>
+                  <span class="depth" role="img" aria-label="Foundational knowledge"><i></i><i></i><i></i></span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="stack-group" data-group="tools" data-reveal>
+              <h3 class="group-head"><span>Data &amp; tools</span><span class="group-count">03</span></h3>
+              <ul class="skill-list">
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">MySQL</span>
+                  <span class="skill-note">schemas, joins, and query practice</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="2">
+                  <span class="skill-name">MongoDB</span>
+                  <span class="skill-note">documents, collections, and app data</span>
+                  <span class="depth" role="img" aria-label="Working knowledge"><i></i><i></i><i></i></span>
+                </li>
+                <li class="skill" data-depth="3">
+                  <span class="skill-name">Git / GitHub</span>
+                  <span class="skill-note">small commits, honest history</span>
+                  <span class="depth" role="img" aria-label="Core"><i></i><i></i><i></i></span>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <p class="stack-footnote" data-reveal>
+            <span aria-hidden="true">*</span> Self-assessed, not certified. I'd rather be precise than impressive.
+          </p>
+        </div>
+      </section>
+
+      <!-- ───────────────────────────── PROFILE ───────────────────────────── -->
+      <section class="section" id="profile" aria-labelledby="profile-title">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <p class="section-index"><span>04</span>Profile</p>
+            <div class="section-title">
+              <h2 id="profile-title">A five-year run, from first web page to RAG pipelines.</h2>
+              <p class="section-sub">
+                The short version: I came to data through the web, and I still care about the
+                interface as much as the model.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-grid">
+            <div class="profile-bio" data-reveal>
+              <p class="bio-lead">
+                I'm Muhammad Nasic Badar — Nasic is fine. I studied Data Science at the Institute of
+                Management Sciences, Peshawar, and I'm building a practice around the
+                unglamorous middle of data work: cleaning, questioning, and explaining.
+              </p>
+              <p>
+                I came to data through the web. That still shapes how I work — I care about the
+                interface as much as the model, because an analysis nobody can use is just a notebook.
+                The tools below are means, not identity; the point is a decision someone can act on.
+              </p>
+              <p>
+                Right now I'm building Medica, a PDF-grounded RAG assistant, and this platform — a
+                small publishing system with auth, an admin panel, and a REST API. Both are open on
+                GitHub. Both are still moving.
+              </p>
+              <p>
+                I'm looking for an internship or junior role where I can be useful on real data, be
+                corrected by people with more experience, and ship things that outlive the demo.
+              </p>
+
+              <dl class="facts">
+                <div>
+                  <dt>Based in</dt>
+                  <dd>Karak, Khyber Pakhtunkhwa, Pakistan</dd>
+                </div>
+                <div>
+                  <dt>Education</dt>
+                  <dd>BS Data Science — IMS Peshawar<span>2021 — 2026</span></dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Analysis · dashboards · applied NLP</dd>
+                </div>
+                <div>
+                  <dt>Languages</dt>
+                  <dd>English · Urdu · Pashto</dd>
+                </div>
+                <div>
+                  <dt>Availability</dt>
+                  <dd>Internships &amp; junior roles — remote or on-site</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="profile-side" data-reveal>
+              <ol class="timeline">
+                <li>
+                  <span class="tl-year">2021</span>
+                  <div>
+                    <h4>Started the degree</h4>
+                    <p>BS Data Science at IMS Peshawar. Web Development certification (Udemy) the same year.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="tl-year">2022–23</span>
+                  <div>
+                    <h4>First real builds</h4>
+                    <p>React frontends — Smart-Brain, Robo-Friends, storefront UIs. Learning by shipping.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="tl-year">2024</span>
+                  <div>
+                    <h4>Data, seriously</h4>
+                    <p>EDA and cleaning practice in Colab. Began Medica, a PDF-grounded RAG prototype.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="tl-year">2025</span>
+                  <div>
+                    <h4>Deeper into Python</h4>
+                    <p>Complete Python Developer (Udemy). BioBERT and PyTorch exploration.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="tl-year">2026</span>
+                  <div>
+                    <h4>Ship the platform</h4>
+                    <p>AI/ML Bootcamp (Udemy). BS Data Science expected. Building this publishing system.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <div class="credentials">
+                <h3>Credentials</h3>
+                <ul>
+                  <li><span>2021</span><span>Web Development</span><span>Udemy</span></li>
+                  <li><span>2025</span><span>Complete Python Developer</span><span>Udemy</span></li>
+                  <li><span>2026</span><span>AI / Machine Learning Bootcamp</span><span>Udemy</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="projects">
-        <div class="container">
-          <div class="section-head">
-            <h2>Projects</h2>
-            <p>Active builds that reflect my current learning path.</p>
+      <!-- ───────────────────────────── CONTACT ───────────────────────────── -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="shell">
+          <div class="section-head section-head-invert" data-reveal>
+            <p class="section-index"><span>05</span>Contact</p>
+            <div class="section-title">
+              <h2 id="contact-title">Let's make something <em>legible.</em></h2>
+            </div>
           </div>
-          <div class="card-grid">
-            <article class="info-card">
-              <h3>Personal Portfolio Platform</h3>
-              <p>
-                Full web platform with responsive UI, admin panel, blog module,
-                and database-backed content.
-              </p>
-              <span>In development</span>
-            </article>
-            <article class="info-card">
-              <h3>Medical RAG AI Assistant</h3>
-              <p>
-                PDF-based QA with ingestion, embeddings, retrieval, and a
-                Streamlit interface for grounded answers.
-              </p>
-              <span>In development</span>
-            </article>
-          </div>
-        </div>
-      </section>
 
+          <p class="contact-lead" data-reveal>
+            I'm looking for an internship or junior data role where the work is real and the feedback
+            is honest. Remote or on-site — Karak is home, but good work travels.
+          </p>
 
-      <section class="section" id="contact">
-        <div class="container">
-          <div class="section-head">
-            <h2>Contact</h2>
-            <p>Open to internships and junior roles.</p>
+          <div class="contact-email-row" data-reveal>
+            <a class="contact-email" href="mailto:badarnasic@gmail.com">badarnasic@gmail.com</a>
+            <button class="copy-btn" id="copy-email" type="button" data-email="badarnasic@gmail.com" aria-live="polite">
+              <span class="copy-label">Copy</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.2" />
+                <path d="M10.5 5.5V3.8A1.3 1.3 0 0 0 9.2 2.5H3.8A1.3 1.3 0 0 0 2.5 3.8v5.4a1.3 1.3 0 0 0 1.3 1.3h1.7" fill="none" stroke="currentColor" stroke-width="1.2" />
+              </svg>
+            </button>
           </div>
-          <div class="contact-cards">
-            <div class="contact-card">
-              <h4>Email</h4>
-              <p>badarnasic@gmail.com</p>
-            </div>
-            <div class="contact-card">
-              <h4>Phone</h4>
-              <p>+92 337 2318387</p>
-            </div>
-            <div class="contact-card">
-              <h4>Location</h4>
-              <p>Karak, Pakistan</p>
-            </div>
+
+          <div class="contact-grid" data-reveal>
+            <a href="https://github.com/Nassic-badar" target="_blank" rel="noopener">
+              <span>GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="Muhammad_Nasic_Badar_Resume.pdf" download>
+              <span>Download CV</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="tel:+923372318387">
+              <span>+92 337 2318387</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <p>
+              <span>Karak, Pakistan</span>
+              <span><time data-clock>--:--</time> PKT</span>
+            </p>
           </div>
+
+          <p class="contact-note" data-reveal>
+            No form, no funnel — just email. I read everything.
+          </p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>Designed and built by Muhammad Nasic Badar. All rights reserved.</p>
+      <div class="shell footer-inner">
+        <a class="footer-brand" href="#top" aria-label="Back to top">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="1.4" />
+            <polyline
+              points="7,21.5 12,15 17,18.5 25,9.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="25" cy="9.5" r="2.3" fill="var(--accent)" />
+          </svg>
+          <span>Nasic Badar</span>
+        </a>
+        <p>Designed &amp; built by hand. No frameworks, no trackers.</p>
+        <p>Set in Fraunces &amp; IBM Plex.</p>
+        <p>© 2026 Muhammad Nasic Badar</p>
+        <a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
 
